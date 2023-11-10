@@ -1,3 +1,5 @@
+
+
 function MovieCard ({movie}) {
   console.log("cart movies", movie)
   return (

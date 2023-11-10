@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import './App.css'
 import MovieCard from './assets/Components/MovieCard';
+import SearchIcon from "./assets/Components/Search.svg"
 
 const movie1 = 
 {
@@ -15,6 +16,7 @@ const movie1 =
 
 function App() {
   const [moviess, setMoviess] = useState ([])
+  const [input, setInput] = useState('')
 
   const apiUrl = "http://www.omdbapi.com/?apikey=d34b85c7"
 
@@ -38,8 +40,10 @@ apicall("superman")
       <h1>Movie land</h1>
    
     <div className="search">
-      <input type="text" placeholder='search movie here'  value="superman"/>
-      <button >Search Moovies</button>
+      <input type="text" placeholder='search movie here'  value={input} onChange={(e)=>{
+       setInput(e.target.value)
+      }}/>
+      <img src={SearchIcon} onClick={()=>apicall(input)}  />
     </div>
 
     {moviess.length  > 0
