@@ -18,7 +18,7 @@ function App() {
   const [moviess, setMoviess] = useState ([])
   const [input, setInput] = useState('')
 
-  const apiUrl = "http://www.omdbapi.com/?apikey=d34b85c7"
+  const apiUrl = "https://www.omdbapi.com/?apikey=d34b85c7"
 
 const apicall = async  (title)=> {
     const res = await fetch (`${apiUrl}&s=${title}`)
